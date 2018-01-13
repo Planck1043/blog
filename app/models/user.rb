@@ -14,10 +14,12 @@ class User < ApplicationRecord
     minimum: 6,
     if: :need_validate_password
 
+  has_many :sorts
+
   private
 
   def need_validate_password
     self.new_record? ||
       (!self.password.nil? or !self.password_confirmation.nil?)
-  end  
+  end
 end

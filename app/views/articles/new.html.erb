@@ -1,0 +1,21 @@
+<h1>新建文章</h1>
+<%= form_for @article do |f| %>
+  <p>
+    <%= f.label "标题" %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label "内容" %>
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <%= f.label "状态" %>
+    <%= select_tag(:state, options_for_select([['草稿','草稿'],['私人','私人'],['公开','公开']])) %>
+  </p>
+
+  <p>
+    <%= f.submit "提交" %>
+  </p>
+<% end %>
