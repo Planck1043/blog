@@ -1,0 +1,36 @@
+<%= form_for @article do |f| %>
+  <% if @article.errors.any? %>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <p>
+    <%= f.label "标题" %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label "内容" %>
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <%= f.label "分类" %>
+    <%= f.select :sort_id, options_for_select(Sort.all.collect{|a| [a.name, a.id]})%>
+  </p>
+
+  <p>
+    <%= f.label "状态" %>
+    <%= f.select :article_state, options_for_select([['草稿','草稿'],['私人','私人'],['公开','公开']]) %>
+  </p>
+
+  <p>
+    <%= f.submit "提交", :disable_with => '提交...' %>
+  </p>
+<% end %>
+
+</br>
+<%= link_to "返回", articles_path %>

@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113023209) do
+ActiveRecord::Schema.define(version: 20180113101341) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "text"
     t.string "article_state"
     t.integer "article_clicks", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sort_id", default: 1
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

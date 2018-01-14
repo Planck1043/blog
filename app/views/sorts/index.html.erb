@@ -1,0 +1,21 @@
+<h1>分类首页</h1>
+<p>
+  <%= link_to "新建分类", new_sort_path  %>
+</p>
+<table class="table table-bordered table-hover">
+  <tr class="text-info">
+    <th>分类名</th>
+    <th>操作</th>
+  </tr>
+
+  <% @sorts.each do |sort| %>
+    <tr>
+      <td><%= sort.name %></td>
+      <td>
+        <%= link_to "显示", sort_path(sort) %>
+        <%= link_to "编辑", edit_sort_path(sort) %>
+        <%= link_to "删除", sort_path(sort), methdo: :delete, data: { confirm: "确认删除该分类？" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: "修改成功"
     else
       render 'edit'
     end
@@ -44,6 +44,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :article_state)
+    params.require(:article).permit(:title, :text, :article_state, :sort_id)
   end
 end

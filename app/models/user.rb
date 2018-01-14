@@ -14,8 +14,6 @@ class User < ApplicationRecord
     minimum: 6,
     if: :need_validate_password
 
-  has_many :sorts
-
   private
 
   def need_validate_password

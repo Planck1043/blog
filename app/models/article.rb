@@ -1,3 +1,6 @@
 class Article < ApplicationRecord
-  belongs_to :article
+  validates :title, presence: true
+
+  belongs_to :sort
+  # belongs_to :category
 end

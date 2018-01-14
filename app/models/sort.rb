@@ -1,4 +1,6 @@
 class Sort < ApplicationRecord
-  belongs_to :user
+  validates :name, presence: true
+
+  # belongs_to :categories
   has_many :articles
 end
