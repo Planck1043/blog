@@ -1,0 +1,22 @@
+<h1>所有文章</h1>
+
+<table class="table table-bordered table-hover">
+  <tr class="text-info">
+    <th>标题</th>
+    <th>分类</th>
+    <th>操作</th>
+  </tr>
+  <% @pages.each do |f| %>
+  <tr>
+    <td><%= f.title %></td>
+    <td><%= f.sort_id %></td>
+    <td>
+      <%= link_to "显示", article_path(f) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="text-center">
+  <%= will_paginate @pages %>
+</div>

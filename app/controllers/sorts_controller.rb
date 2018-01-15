@@ -11,7 +11,7 @@ class SortsController < ApplicationController
     @sort = Sort.new(sort_params)
 
     if @sort.save
-      redirect_to @sort
+      redirect_to sorts_path
     else
       render "new"
     end
@@ -20,6 +20,7 @@ class SortsController < ApplicationController
   def show
     @sort = Sort.find(params[:id])
     @articles = @sort.articles
+  end
 
   def edit
     @sort = Sort.find(params[:id])

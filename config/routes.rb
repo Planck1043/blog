@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-	root "articles#index"
+	root "pages#index"
 	resources :users
 	resources :sessions
-	resources :articles
+	resources :articles do
+		collection do
+			get :search
+		end
+	end
 	resources :sorts
+	resources :pages
 end

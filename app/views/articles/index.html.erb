@@ -1,4 +1,4 @@
-<h1>博客首页</h1>
+<h1>博客后台</h1>
 <p>
   <%= link_to "新建文章", new_article_path  %>
 </p>
@@ -15,7 +15,7 @@
   <tr>
     <td><%= f.title %></td>
     <td><%= f.text %></td>
-    <td><%= f.sort_id %></td>
+    <td><%= f.sort.name %></td>
     <td><%= f.article_state %></td>
     <td>
       <%= link_to "显示", article_path(f) %>
@@ -26,3 +26,7 @@
   </tr>
   <% end %>
 </table>
+
+<div class="text-center">
+  <%= will_paginate @articles %>
+</div>
