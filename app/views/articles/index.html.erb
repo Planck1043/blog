@@ -13,12 +13,11 @@
   </tr>
   <% @articles.each do |f| %>
   <tr>
-    <td><%= f.title %></td>
+    <td><%=  link_to "#{f.title}", article_path(f) %> (<%= f.article_count %>)</td>
     <td><%= f.text %></td>
     <td><%= f.sort.name %></td>
     <td><%= f.article_state %></td>
     <td>
-      <%= link_to "显示", article_path(f) %>
       <%= link_to "编辑", edit_article_path(f) %>
       <%= link_to "删除", article_path(f),
           method: :delete, data: { confirm: "确认删除该文章？" } %>

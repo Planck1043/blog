@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @article.article_count = @article.article_count + 1
+    @article.save
   end
 
   def edit
