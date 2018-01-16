@@ -2,7 +2,7 @@ development:
   adapter: mysql2       #数据库类型
   database: blog        #数据库名字(需要修改)
   username: root        #用户名
-  password:             #用户密码
+  password: zhao1203 #用户密码
   host: localhost       #ip地址
 
 
