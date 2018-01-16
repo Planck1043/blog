@@ -8,7 +8,7 @@
   </tr>
   <% @pages.each do |f| %>
   <tr>
-    <td><%= f.title %></td>
+    <td><%= link_to "#{f.title}", article_path(f) %> (<%= f.article_count %>)</td>
     <td><%= f.sort.name %></td>
     <td>
       <%= link_to "显示", article_path(f) %>
