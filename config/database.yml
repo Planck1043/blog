@@ -8,7 +8,7 @@ development:
 
 production:
   adapter: mysql2
-  database: rails01
+  database: blog
   username: root
-  password:
+  password: zhao1203
   host: localhost
