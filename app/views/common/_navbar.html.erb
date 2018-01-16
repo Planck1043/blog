@@ -22,7 +22,6 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "分类", sorts_path %></li>
                 <% if current_user.nil? %>
                   <li><%= link_to("注册", new_user_path) %> </li>
                   <!-- 在 rails 中 "link_to" 是 "<a>" 的封装 -->
@@ -34,6 +33,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul>
+                      <li><%= link_to "分类", sorts_path %></li>
                       <li><%= link_to "后台", articles_path %></li>
                       <li> <%= link_to("登出", session_path(session),
                               method: :delete, data: { confirm: '确认退出吗?' } ) %> </li>
