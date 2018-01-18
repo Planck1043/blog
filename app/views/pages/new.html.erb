@@ -1,0 +1,13 @@
+<h1>文章分类</h1>
+
+<table class="table table-bordered table-hover">
+  <tr class="text-info">
+    <th>分类名</th>
+  </tr>
+
+  <% @sorts.each do |sort| %>
+    <tr>
+      <td><%= link_to "#{sort.name}", page_path(sort) %></td>
+    </tr>
+  <% end %>
+</table>

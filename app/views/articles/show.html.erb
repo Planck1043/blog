@@ -6,18 +6,21 @@
 
 <p>
   <strong>内容:</strong>
-  <%= @article.text %>
+  <%= @article.text.html_safe %>
 </p>
 
 <p>
   <strong>分类:</strong>
-  <%#= @sort_name %>
+  <%= @article.sort.name %>
 </p>
 
-<p>
-  <strong>状态:</strong>
-  <%= @article.article_state %>
-</p>
+<% if current_user.nil? %>
+<% else %>
+  <p>
+    <strong>状态:</strong>
+    <%= @article.article_state %>
+  </p>
+<% end %>
 
 <p>
   <strong>阅读量:</strong>
@@ -25,4 +28,4 @@
 </p>
 
 </br>
-<%= link_to "返回", articles_path %>
+<%= link_to "返回", :back %>

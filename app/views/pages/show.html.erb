@@ -1,18 +1,17 @@
-<h1>所有文章</h1>
+<h1>分类</h1>
+<p>
+  <%= @sort.name %>
+</p>
 
 <table class="table table-bordered table-hover">
   <tr class="text-info">
     <th>标题</th>
-    <th>分类</th>
+    <th>内容</th>
   </tr>
-  <% @pages.each do |f| %>
+  <% @articles.each do |f| %>
   <tr>
     <td><%= link_to "#{f.title}", article_path(f) %> (<%= f.article_count %>)</td>
-    <td><%= link_to "#{f.sort.name}", page_path(f.sort_id) %></td>
+    <td><%= f.text %></td>
   </tr>
   <% end %>
 </table>
-
-<div class="text-center">
-  <%= will_paginate @pages %>
-</div>
