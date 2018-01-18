@@ -14,18 +14,20 @@
   <%= @article.sort.name %>
 </p>
 
+<p>
+  <strong>阅读量:</strong>
+  <%= @article.article_count %>
+</p>
+
 <% if current_user.nil? %>
 <% else %>
   <p>
     <strong>状态:</strong>
     <%= @article.article_state %>
   </p>
-<% end %>
 
-<p>
-  <strong>阅读量:</strong>
-  <%= @article.article_count %>
-</p>
+  <%= link_to "编辑", edit_article_path %>
+<% end %>
 
 </br>
 <%= link_to "返回", :back %>

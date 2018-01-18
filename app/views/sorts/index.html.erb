@@ -10,9 +10,8 @@
 
   <% @sorts.each do |sort| %>
     <tr>
-      <td><%= sort.name %></td>
+      <td><%= link_to "#{sort.name}", sort_path(sort) %></td>
       <td>
-        <%= link_to "显示", sort_path(sort) %>
         <%= link_to "编辑", edit_sort_path(sort) %>
         <%= link_to "删除", sort_path(sort), methdo: :delete, data: { confirm: "确认删除该分类？" } %>
       </td>

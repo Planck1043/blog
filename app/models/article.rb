@@ -11,7 +11,7 @@ class Article < ApplicationRecord
       hash[:article].title = hash[:article].title.gsub(/世界大同/, "")
       hash[:article].sort_id = 2
     elsif k == "全力以赴"
-      hash[:article] = hash[:article].gsub(/全力以赴/, "")
+      hash[:article].title = hash[:article].title.gsub(/全力以赴/, "")
       hash[:article].sort_id = 3
     elsif k == "顺流而下"
       hash[:article].title = hash[:article].title.gsub(/顺流而下/, "")
