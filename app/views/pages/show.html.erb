@@ -11,7 +11,7 @@
   <% @articles.each do |f| %>
   <tr>
     <td><%= link_to "#{f.title}", article_path(f) %> (<%= f.article_count %>)</td>
-    <td><%= f.text %></td>
+    <td><%= f.text.html_safe %></td>
   </tr>
   <% end %>
 </table>
